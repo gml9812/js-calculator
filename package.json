@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/gml9812/js-calculator#readme",
   "devDependencies": {
-    "cypress": "^9.0.0"
+    "babel-eslint": "^10.1.0",
+    "cypress": "^9.0.0",
+    "eslint": "^8.2.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
   }
 }
