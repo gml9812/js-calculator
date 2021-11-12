@@ -1,4 +1,3 @@
 function a(){
-let a = 11
-
+    let a = 11
 }
