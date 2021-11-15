@@ -1,6 +1,3 @@
-// class가 digits인 놈한테 eventlistener 부여.
-// 내부적으로 구분하게 한다.
-
 const display = document.querySelector('#total');
 const numberPad = document.querySelector('.digits');
 
@@ -15,3 +12,11 @@ const numberClick = (event) => {
 };
 
 numberPad.addEventListener('click', numberClick);
+
+const modifier = document.querySelector('.modifiers');
+
+const allClear = () => {
+  display.innerHTML = '0';
+};
+
+modifier.addEventListener('click', allClear);

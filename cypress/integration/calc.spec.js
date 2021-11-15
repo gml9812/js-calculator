@@ -12,6 +12,6 @@ describe('test counter', () => {
     cy.get('.digits').contains('1').click();
     cy.get('.digits').contains('5').click();
     cy.get('.modifier').click();
-    cy.get('#total').should('have.value', '0');
+    cy.get('#total').should('have.text', '0');
   });
 });
