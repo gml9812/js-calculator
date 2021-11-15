@@ -7,9 +7,4 @@ describe('test counter', () => {
     cy.get('.digits').contains('1').click();
     cy.get('#total').should('have.text', '1');
   });
-
-  it('clears total when AC pushed', () => {
-    cy.get('.modifier').click();
-    cy.get('#total').should('have.value', '0');
-  });
 });
