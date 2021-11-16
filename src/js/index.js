@@ -1,22 +1,7 @@
-const display = document.querySelector('#total');
-const numberPad = document.querySelector('.digits');
+import Calculator from './view/Calculator.js';
 
-const numberClick = (event) => {
-  const target = event.target;
-  const numDisplayed = display.innerHTML;
-  if (numDisplayed === '0') {
-    display.innerHTML = target.innerHTML;
-  } else {
-    display.innerHTML = numDisplayed + target.innerHTML;
-  }
-};
+export default function app() {
+  new Calculator({ $app: document.querySelector('#app') });
+}
 
-numberPad.addEventListener('click', numberClick);
-
-const modifier = document.querySelector('.modifiers');
-
-const allClear = () => {
-  display.innerHTML = '0';
-};
-
-modifier.addEventListener('click', allClear);
+app();

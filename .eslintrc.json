@@ -9,13 +9,16 @@
     ],
     "plugins": ["prettier"],
     "parserOptions": {
-        "ecmaVersion": 13
+        "ecmaVersion": 12,
+        "sourceType": "module"
     },
     "rules": {
         "prettier/prettier": ["error",{
             "endOfLine": "auto"
         }],
         "linebreak-style": 0,
-        "max-depth": ["error", 1]
+        "max-depth": ["error", 2],
+        "require-jsdoc": 0,
+        "object-curly-spacing": 0
     }
 }
