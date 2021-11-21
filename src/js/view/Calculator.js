@@ -45,12 +45,12 @@ export default function Calculator({ $app }) {
       }
     };
 
+    const allClear = () => {
+      display.innerHTML = '0';
+    };
+
     numberPad.addEventListener('click', numberClick);
     modifier.addEventListener('click', allClear);
-  };
-
-  const allClear = () => {
-    display.innerHTML = '0';
   };
 
   const init = () => {
