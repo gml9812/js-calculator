@@ -1,8 +1,15 @@
-export default function Calculator({ $app }) {
-  const render = () => {
+export default function Calculator({ $app, initialState }) {
+  this.state = initialState;
+
+  this.setState = (nextState) => {
+    this.state = nextState;
+    this.render();
+  };
+
+  this.render = () => {
     $app.innerHTML = `
     <div class="calculator">
-      <h1 id="total">0</h1>
+      <h1 id="total">${this.state.display}</h1>
         <div class="digits flex">
           <button class="digit">9</button>
           <button class="digit">8</button>
@@ -27,36 +34,36 @@ export default function Calculator({ $app }) {
         </div>
     </div>
     `;
-  };
 
-  const addEvent = () => {
-    const display = document.querySelector('#total');
     const numberPad = document.querySelector('.digits');
-
     const modifier = document.querySelector('.modifiers');
+    const operationPad = document.querySelector('.operations');
 
-    const numberClick = (event) => {
-      const target = event.target;
-      const numDisplayed = display.innerHTML;
-      if (numDisplayed === '0') {
-        display.innerHTML = target.innerHTML;
+    console.log(this.state);
+
+    this.numberClick = (event) => {
+      // const target = event.target;
+      if (this.state.display === '0') {
+        this.setState({
+          ...this.state,
+          display: event.target.innerHTML,
+        });
       } else {
-        display.innerHTML = numDisplayed + target.innerHTML;
+        this.setState({
+          ...this.state,
+          display: this.state.display + event.target.innerHTML,
+        });
       }
     };
 
-    const allClear = () => {
-      display.innerHTML = '0';
+    this.operationClick = (event) => {
+      // const target = event.target;
+      console.log('test');
     };
 
-    numberPad.addEventListener('click', numberClick);
-    modifier.addEventListener('click', allClear);
+    numberPad.addEventListener('click', this.numberClick);
+    operationPad.addEventListener('click', this.operationClick);
   };
 
-  const init = () => {
-    render();
-    addEvent();
-  };
-
-  init();
+  this.render();
 }
