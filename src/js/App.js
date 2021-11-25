@@ -6,9 +6,8 @@ export default function App($app) {
   const calculator = new Calculator({
     $app,
     initialState: {
-      operand1: 1,
+      operand1: 0,
       operator: '',
-      operand2: 2,
       display: '0',
       clearNext: false,
     },
