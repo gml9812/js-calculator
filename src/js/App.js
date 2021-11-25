@@ -1,4 +1,4 @@
-import Calculator from './view/Calculator.js';
+import Calculator from './container/CalculatorContainer.js';
 
 export default function App($app) {
   this.state = {};
